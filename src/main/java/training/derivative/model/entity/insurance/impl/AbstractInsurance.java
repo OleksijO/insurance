@@ -1,6 +1,6 @@
-package training.derivative.model.entity.insurance;
+package training.derivative.model.entity.insurance.impl;
 
-import training.derivative.model.entity.Insurance;
+import training.derivative.model.entity.insurance.Insurance;
 
 /**
  * Created by oleksij.onysymchuk@gmail on 13.11.2016.

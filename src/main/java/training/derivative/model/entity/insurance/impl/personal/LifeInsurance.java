@@ -1,4 +1,4 @@
-package training.derivative.model.entity.insurance.personal;
+package training.derivative.model.entity.insurance.impl.personal;
 
 /**
  * Created by oleksij.onysymchuk@gmail on 13.11.2016.

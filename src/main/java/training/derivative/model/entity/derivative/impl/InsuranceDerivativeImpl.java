@@ -1,9 +1,9 @@
-package training.derivative.model.entity.derivative;
+package training.derivative.model.entity.derivative.impl;
 
-import training.derivative.model.entity.Insurance;
-import training.derivative.model.entity.InsuranceDerivative;
-import training.derivative.model.entity.InsuranceFindCondition;
-import training.derivative.model.entity.InsuranceSortMethod;
+import training.derivative.model.entity.derivative.InsuranceFindCondition;
+import training.derivative.model.entity.derivative.InsuranceSortMethod;
+import training.derivative.model.entity.insurance.Insurance;
+import training.derivative.model.entity.derivative.InsuranceDerivative;
 
 import java.util.ArrayList;
 import java.util.Collections;

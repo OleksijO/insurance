@@ -1,4 +1,6 @@
-package training.derivative.model.entity;
+package training.derivative.model.entity.derivative;
+
+import training.derivative.model.entity.insurance.Insurance;
 
 import java.util.List;
 

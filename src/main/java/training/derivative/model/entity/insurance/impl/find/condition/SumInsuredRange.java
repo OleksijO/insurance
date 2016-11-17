@@ -1,7 +1,7 @@
-package training.derivative.model.entity.insurance.find.condition;
+package training.derivative.model.entity.insurance.impl.find.condition;
 
-import training.derivative.model.entity.Insurance;
-import training.derivative.model.entity.InsuranceFindCondition;
+import training.derivative.model.entity.insurance.Insurance;
+import training.derivative.model.entity.derivative.InsuranceFindCondition;
 
 import java.util.function.Predicate;
 

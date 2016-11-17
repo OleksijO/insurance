@@ -1,10 +1,9 @@
 package training.derivative.model;
 
-import training.derivative.model.entity.Insurance;
-import training.derivative.model.entity.InsuranceDerivative;
-import training.derivative.model.entity.derivative.InsuranceDerivativeImpl;
+import training.derivative.model.entity.derivative.InsuranceDerivative;
+import training.derivative.model.entity.derivative.impl.InsuranceDerivativeImpl;
+import training.derivative.model.entity.insurance.Insurance;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,9 +13,9 @@ import java.util.List;
  * @version 1.0 14 NOV 2016
  */
 public class Model {
-    List<Insurance> insurances = new ArrayList<>();
 
     public InsuranceDerivative createDerivative(String insurantName, List<Insurance> insurances) {
         return new InsuranceDerivativeImpl(insurantName, insurances);
     }
+
 }

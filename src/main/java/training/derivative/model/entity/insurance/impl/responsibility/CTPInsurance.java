@@ -1,6 +1,6 @@
-package training.derivative.model.entity.insurance.responsibility;
+package training.derivative.model.entity.insurance.impl.responsibility;
 
-import training.derivative.model.entity.insurance.AbstractInsurance;
+import training.derivative.model.entity.insurance.impl.AbstractInsurance;
 
 import java.util.List;
 

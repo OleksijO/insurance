@@ -1,16 +1,16 @@
 package training.derivative;
 
 import training.derivative.model.Model;
-import training.derivative.model.entity.Insurance;
-import training.derivative.model.entity.InsuranceDerivative;
-import training.derivative.model.entity.insurance.find.condition.RiskDegreeRange;
-import training.derivative.model.entity.insurance.find.condition.SumInsuredRange;
-import training.derivative.model.init.InitInsurance;
+import training.derivative.model.entity.insurance.Insurance;
+import training.derivative.model.entity.derivative.InsuranceDerivative;
+import training.derivative.model.entity.insurance.impl.find.condition.RiskDegreeRange;
+import training.derivative.model.entity.insurance.impl.find.condition.SumInsuredRange;
+import training.derivative.init.InitInsurance;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static training.derivative.model.entity.InsuranceSortMethod.BY_RISK_DEGREE;
+import static training.derivative.model.entity.derivative.InsuranceSortMethod.BY_RISK_DEGREE;
 
 /**
  * This class represents Controller unit of MVC based architecture of program "Insurances".

@@ -1,11 +1,11 @@
-package training.derivative.model.init;
+package training.derivative.init;
 
-import training.derivative.model.entity.insurance.AbstractInsurance;
-import training.derivative.model.entity.insurance.personal.LifeInsurance;
-import training.derivative.model.entity.insurance.personal.MedicalInsurance;
-import training.derivative.model.entity.insurance.property.CASCOInsurance;
-import training.derivative.model.entity.insurance.property.FireInsurance;
-import training.derivative.model.entity.insurance.responsibility.CTPInsurance;
+import training.derivative.model.entity.insurance.impl.AbstractInsurance;
+import training.derivative.model.entity.insurance.impl.personal.LifeInsurance;
+import training.derivative.model.entity.insurance.impl.personal.MedicalInsurance;
+import training.derivative.model.entity.insurance.impl.property.CASCOInsurance;
+import training.derivative.model.entity.insurance.impl.property.FireInsurance;
+import training.derivative.model.entity.insurance.impl.responsibility.CTPInsurance;
 
 /**
  * This enum contains data and is used to replace user input for test or demonstration purposes.

@@ -3,20 +3,20 @@ package training.derivative;
 import org.junit.Before;
 import org.junit.Test;
 import training.derivative.model.Model;
-import training.derivative.model.entity.Insurance;
-import training.derivative.model.entity.InsuranceDerivative;
-import training.derivative.model.entity.InsuranceSortMethod;
-import training.derivative.model.entity.derivative.InsuranceDerivativeImpl;
-import training.derivative.model.entity.insurance.find.condition.RiskDegreeRange;
-import training.derivative.model.entity.insurance.find.condition.SpecifiedType;
-import training.derivative.model.entity.insurance.find.condition.SumInsuredRange;
-import training.derivative.model.init.InitInsurance;
+import training.derivative.model.entity.insurance.Insurance;
+import training.derivative.model.entity.derivative.InsuranceDerivative;
+import training.derivative.model.entity.derivative.InsuranceSortMethod;
+import training.derivative.model.entity.derivative.impl.InsuranceDerivativeImpl;
+import training.derivative.model.entity.insurance.impl.find.condition.RiskDegreeRange;
+import training.derivative.model.entity.insurance.impl.find.condition.SpecifiedType;
+import training.derivative.model.entity.insurance.impl.find.condition.SumInsuredRange;
+import training.derivative.init.InitInsurance;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static training.derivative.model.init.InitInsurance.*;
+import static training.derivative.init.InitInsurance.*;
 
 /**
  * This test class is using for test model's entity logic
