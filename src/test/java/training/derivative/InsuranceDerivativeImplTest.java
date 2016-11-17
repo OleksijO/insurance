@@ -5,11 +5,11 @@ import org.junit.Test;
 import training.derivative.model.Model;
 import training.derivative.model.entity.insurance.Insurance;
 import training.derivative.model.entity.derivative.InsuranceDerivative;
-import training.derivative.model.entity.derivative.InsuranceSortMethod;
+import training.derivative.model.entity.insurance.InsuranceSortMethod;
 import training.derivative.model.entity.derivative.impl.InsuranceDerivativeImpl;
-import training.derivative.model.entity.insurance.impl.find.condition.RiskDegreeRange;
-import training.derivative.model.entity.insurance.impl.find.condition.SpecifiedType;
-import training.derivative.model.entity.insurance.impl.find.condition.SumInsuredRange;
+import training.derivative.model.entity.insurance.find.condition.RiskDegreeRange;
+import training.derivative.model.entity.insurance.find.condition.SpecifiedType;
+import training.derivative.model.entity.insurance.find.condition.SumInsuredRange;
 import training.derivative.init.InitInsurance;
 
 import java.util.ArrayList;
@@ -86,6 +86,7 @@ public class InsuranceDerivativeImplTest {
     public void testFindInsurances() {
         assertEquals(insurances, derivative.findInsurances());
         assertEquals(insurances, derivative.findInsurances(null));
+        assertEquals(insurances, derivative.findInsurances(null,null));
 
         assertEquals(0, derivative.findInsurances(new SpecifiedType("bla bla bla")).size());
         assertEquals(1, derivative.findInsurances(new SpecifiedType("CASCOInsurance")).size());
@@ -95,16 +96,19 @@ public class InsuranceDerivativeImplTest {
         assertEquals(0, derivative.findInsurances(
                 new RiskDegreeRange(0.007, 0.012),
                 new SpecifiedType("bla bla bla"))
-                .size());
+                .size()
+        );
         assertEquals(1, derivative.findInsurances(
                 new RiskDegreeRange(0.007, 0.012),
                 new SumInsuredRange(5000000, 6000000))
-                .size());
+                .size()
+        );
         assertEquals(0, derivative.findInsurances(
                 new RiskDegreeRange(0.007, 0.012),
                 new SumInsuredRange(5000000, 6000000),
                 new SpecifiedType("bla bla bla"))
-                .size());
+                .size()
+        );
 
     }
 

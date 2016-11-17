@@ -1,7 +1,7 @@
 package training.derivative.model.entity.derivative.impl;
 
-import training.derivative.model.entity.derivative.InsuranceFindCondition;
-import training.derivative.model.entity.derivative.InsuranceSortMethod;
+import training.derivative.model.entity.insurance.InsuranceFindCondition;
+import training.derivative.model.entity.insurance.InsuranceSortMethod;
 import training.derivative.model.entity.insurance.Insurance;
 import training.derivative.model.entity.derivative.InsuranceDerivative;
 
@@ -12,16 +12,34 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * Created by oleksij.onysymchuk@gmail on 13.11.2016.
+ * This class represents implementation of interface {@link InsuranceDerivative}
+ *
+ * @author oleksij.onysymchuk@gmail
+ * @version 1.0 17 NOV 2016
  */
 public class InsuranceDerivativeImpl implements InsuranceDerivative {
+    /**
+     * Full name of the derivative owner
+     */
     private String insurantPerson;
+    /**
+     * Container for insurances
+     */
     private List<Insurance> insurances;
 
+    /**
+     * Default constructor, which initializes empty container
+     */
     public InsuranceDerivativeImpl() {
         insurances = new ArrayList<>();
     }
 
+    /**
+     * Initializes all fields
+     *
+     * @param insurantPerson Full name of the derivative owner
+     * @param insurances     List of insurances
+     */
     public InsuranceDerivativeImpl(String insurantPerson, List<Insurance> insurances) {
         this.insurantPerson = insurantPerson;
         this.insurances = insurances;
@@ -37,7 +55,7 @@ public class InsuranceDerivativeImpl implements InsuranceDerivative {
 
     @Override
     public void sortInsurances(InsuranceSortMethod method) {
-        if ((insurances == null) || (insurances.isEmpty() || method==null)) {
+        if ((insurances == null) || (insurances.isEmpty() || method == null)) {
             return;
         }
         Collections.sort(insurances, method.getComparator());
@@ -54,7 +72,9 @@ public class InsuranceDerivativeImpl implements InsuranceDerivative {
 
         Stream<Insurance> insuranceStream = insurances.stream();
         for (InsuranceFindCondition condition : conditions) {
-            insuranceStream = insuranceStream.filter(condition.getPredicate());
+            if (condition != null) {
+                insuranceStream = insuranceStream.filter(condition.getPredicate());
+            }
         }
 
         return insuranceStream.collect(Collectors.toList());

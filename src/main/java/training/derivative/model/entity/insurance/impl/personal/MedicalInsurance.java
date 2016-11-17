@@ -1,12 +1,21 @@
 package training.derivative.model.entity.insurance.impl.personal;
 
 /**
- * Created by oleksij.onysymchuk@gmail on 13.11.2016.
+ * This class represents person medical insurance entity
+ *
+ * @author oleksij.onysymchuk@gmail
+ * @version 1.0 17 NOV 2016
  */
 public class MedicalInsurance extends AbstractPersonalInsurance {
     public static final String NAME = "Medical BaseInsurance";
+    /**
+     * Insurance provider clinics name
+     */
     private String clinicsName;
 
+    /**
+     * Initializes field name with system constant
+     */
     public MedicalInsurance() {
         this.name = NAME;
     }
@@ -16,7 +25,17 @@ public class MedicalInsurance extends AbstractPersonalInsurance {
         this.clinicsName = clinicsName;
     }
 
-    public MedicalInsurance(int id, long sumInsured, double riskDegree, String insuredPersonFullName, String clinicsName) {
+    /**
+     * Initializes the instance fields with specified values
+     *
+     * @param id                    Unique serial number of insurance
+     * @param sumInsured            The value of sum insured
+     * @param riskDegree            The value of risk degree
+     * @param insuredPersonFullName Full name of person to be insured by this insurance
+     * @param clinicsName           Insurance provider clinics name
+     */
+    public MedicalInsurance(int id, long sumInsured,
+                            double riskDegree, String insuredPersonFullName, String clinicsName) {
         super(id, NAME, sumInsured, riskDegree, insuredPersonFullName);
         this.clinicsName = clinicsName;
     }

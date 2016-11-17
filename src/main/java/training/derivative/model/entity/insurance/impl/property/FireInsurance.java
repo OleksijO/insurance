@@ -3,23 +3,35 @@ package training.derivative.model.entity.insurance.impl.property;
 import training.derivative.model.entity.insurance.impl.AbstractInsurance;
 
 /**
- * Created by oleksij.onysymchuk@gmail on 13.11.2016.
+ * This class represents fire insurance entity
+ *
+ * @author oleksij.onysymchuk@gmail
+ * @version 1.0 17 NOV 2016
  */
 public class FireInsurance extends AbstractInsurance {
-    public static final String NAME= "Fire BaseInsurance";
+    public static final String NAME = "Fire BaseInsurance";
+    /**
+     * Address of property to be insured by this insurance
+     */
     private String address;
 
+    /**
+     * Initializes field name with system constant
+     */
     public FireInsurance() {
-        this.name=NAME;
+        this.name = NAME;
     }
 
-    public FireInsurance(String address) {
-        this();
-        this.address = address;
-    }
-
-    public FireInsurance(int id,long sumInsured, double riskDegree, String address) {
-        super(id, NAME,sumInsured, riskDegree);
+    /**
+     * Initializes the instance fields with specified values
+     *
+     * @param id         Unique serial number of insurance
+     * @param sumInsured The value of sum insured
+     * @param riskDegree The value of risk degree
+     * @param address    Address of property to be insured by this insurance
+     */
+    public FireInsurance(int id, long sumInsured, double riskDegree, String address) {
+        super(id, NAME, sumInsured, riskDegree);
         this.address = address;
     }
 
@@ -40,7 +52,6 @@ public class FireInsurance extends AbstractInsurance {
         FireInsurance that = (FireInsurance) o;
 
         return address != null ? address.equals(that.address) : that.address == null;
-
     }
 
     @Override
@@ -55,6 +66,6 @@ public class FireInsurance extends AbstractInsurance {
         return "FireInsurance{" +
                 super.toString() +
                 ", address='" + address + '\'' +
-                "} " ;
+                "} ";
     }
 }

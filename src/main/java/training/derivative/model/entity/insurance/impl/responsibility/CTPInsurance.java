@@ -5,23 +5,38 @@ import training.derivative.model.entity.insurance.impl.AbstractInsurance;
 import java.util.List;
 
 /**
- * Created by oleksij.onysymchuk@gmail on 13.11.2016.
+ * This class represents Compulsory Third Party insurance entity
+ *
+ * @author oleksij.onysymchuk@gmail
+ * @version 1.0 17 NOV 2016
  */
 public class CTPInsurance extends AbstractInsurance {
-    public static final String NAME = "Compulsory Third Party BaseInsurance";
+    public static final String NAME = "Compulsory Third Party Insurance";
+    /**
+     * Insured car number
+     */
     private String carNumber;
+    /**
+     * Possible driver list for which this insurance is available. May be empty.
+     */
     private List<String> drivers;
 
+    /**
+     * Initializes field name with system constant
+     */
     public CTPInsurance() {
         this.name = NAME;
     }
 
-    public CTPInsurance(String carNumber, List<String> drivers) {
-        this();
-        this.carNumber = carNumber;
-        this.drivers = drivers;
-    }
-
+    /**
+     * Initializes the instance fields with specified values
+     *
+     * @param id         Unique serial number of insurance
+     * @param sumInsured The value of sum insured
+     * @param riskDegree The value of risk degree
+     * @param carNumber  Insured car number
+     * @param drivers    Possible driver list for which this insurance is available. May be null.
+     */
     public CTPInsurance(int id, long sumInsured, double riskDegree, String carNumber, List<String> drivers) {
         super(id, NAME, sumInsured, riskDegree);
         this.carNumber = carNumber;

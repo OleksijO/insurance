@@ -10,8 +10,8 @@ import training.derivative.model.entity.insurance.impl.responsibility.CTPInsuran
 /**
  * This enum contains data and is used to replace user input for test or demonstration purposes.
  *
- * @version 1.0 17 NOV 2016
  * @author oleksij.onysymchuk@gmail
+ * @version 1.0 17 NOV 2016
  */
 public enum InitInsurance {
     A(new LifeInsurance(

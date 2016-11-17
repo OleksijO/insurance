@@ -1,21 +1,34 @@
 package training.derivative.model.entity.insurance.impl.personal;
 
 /**
- * Created by oleksij.onysymchuk@gmail on 13.11.2016.
+ * This class represents person life insurance entity
+ *
+ * @author oleksij.onysymchuk@gmail
+ * @version 1.0 17 NOV 2016
  */
 public class LifeInsurance extends AbstractPersonalInsurance {
     public static final String NAME = "Life BaseInsurance";
+    /**
+     * The period of insurance availability
+     */
     private int insuredPeriod;
 
+    /**
+     * Initializes field name with system constant
+     */
     public LifeInsurance() {
         this.name = NAME;
     }
 
-    public LifeInsurance(int insuredPeriod) {
-        this();
-        this.insuredPeriod = insuredPeriod;
-    }
-
+    /**
+     * Initializes the instance fields with specified values
+     *
+     * @param id            Unique serial number of insurance
+     * @param sumInsured    The value of sum insured
+     * @param riskDegree    The value of risk degree
+     * @param insuredPersonFullName Full name of person to be insured by this insurance
+     * @param insuredPeriod The period of insurance availability
+     */
     public LifeInsurance(int id, long sumInsured, double riskDegree, String insuredPersonFullName, int insuredPeriod) {
         super(id, NAME, sumInsured, riskDegree, insuredPersonFullName);
         this.insuredPeriod = insuredPeriod;

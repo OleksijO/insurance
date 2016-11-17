@@ -1,12 +1,16 @@
-package training.derivative.model.entity.insurance.impl.find.condition;
+package training.derivative.model.entity.insurance.find.condition;
 
 import training.derivative.model.entity.insurance.Insurance;
-import training.derivative.model.entity.derivative.InsuranceFindCondition;
+import training.derivative.model.entity.insurance.InsuranceFindCondition;
 
 import java.util.function.Predicate;
 
 /**
- * Created by oleksij.onysymchuk@gmail on 17.11.2016.
+ * This class is a condition container for predicate, which is used for filtering insurances
+ * by the type (simple class name). Instances of specified class are considered to be find by this condition.
+ *
+ * @author oleksij.onysymchuk@gmail
+ * @version 1.0 17 NOV 2016
  */
 public class SpecifiedType implements InsuranceFindCondition {
     final private Predicate<Insurance> predicate;

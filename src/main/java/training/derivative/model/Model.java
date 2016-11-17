@@ -7,7 +7,7 @@ import training.derivative.model.entity.insurance.Insurance;
 import java.util.List;
 
 /**
- * This class represents Model unit of MVC based architecture of program.
+ * This class represents Model unit of MVC based architecture of program "Insurances".
  *
  * @author oleksij.onysymchuk@gmail
  * @version 1.0 14 NOV 2016

@@ -3,17 +3,43 @@ package training.derivative.model.entity.insurance.impl;
 import training.derivative.model.entity.insurance.Insurance;
 
 /**
- * Created by oleksij.onysymchuk@gmail on 13.11.2016.
+ * This class represents common state and functionality of insurance entity
+ *
+ * @author oleksij.onysymchuk@gmail
+ * @version 1.0 17 NOV 2016
  */
 abstract public class AbstractInsurance implements Insurance {
+    /**
+     * Unique serial number of insurance
+     */
     protected int id;
+    /**
+     * Insurance name
+     */
     protected String name;
+    /**
+     * The value of sum insured
+     */
     protected long sumInsured;
+    /**
+     * The value of risk degree
+     */
     protected double riskDegree;
 
+    /**
+     * Initializes only the super instance
+     */
     public AbstractInsurance() {
     }
 
+    /**
+     * Initializes fields
+     *
+     * @param id         Unique serial number of insurance
+     * @param name       Insurance name
+     * @param sumInsured The value of sum insured
+     * @param riskDegree The value of risk degree
+     */
     public AbstractInsurance(int id, String name, long sumInsured, double riskDegree) {
         this.id = id;
         this.name = name;
@@ -90,7 +116,7 @@ abstract public class AbstractInsurance implements Insurance {
     public String toString() {
         return "id=" + id +
                 ", name='" + name + '\'' +
-                ", sumInsured=" + sumInsured + " cents"+
+                ", sumInsured=" + sumInsured + " cents" +
                 ", riskDegree=" + riskDegree;
     }
 }

@@ -3,21 +3,33 @@ package training.derivative.model.entity.insurance.impl.property;
 import training.derivative.model.entity.insurance.impl.AbstractInsurance;
 
 /**
- * Created by oleksij.onysymchuk@gmail on 13.11.2016.
+ * This class represents CASCO insurance entity
+ *
+ * @author oleksij.onysymchuk@gmail
+ * @version 1.0 17 NOV 2016
  */
-public class CASCOInsurance extends AbstractInsurance{
-    public static final String NAME= "Casualty and Collision BaseInsurance";
+public class CASCOInsurance extends AbstractInsurance {
+    public static final String NAME = "Casualty and Collision BaseInsurance";
+    /**
+     * Insured car number
+     */
     private String carNumber;
 
+    /**
+     * Initializes field name with system constant
+     */
     public CASCOInsurance() {
         this.name = NAME;
     }
 
-    public CASCOInsurance(String carNumber) {
-        this();
-        this.carNumber = carNumber;
-    }
-
+    /**
+     * Initializes the instance fields with specified values
+     *
+     * @param id         Unique serial number of insurance
+     * @param sumInsured The value of sum insured
+     * @param riskDegree The value of risk degree
+     * @param carNumber  Insured car number
+     */
     public CASCOInsurance(int id, long sumInsured, double riskDegree, String carNumber) {
         super(id, NAME, sumInsured, riskDegree);
         this.carNumber = carNumber;
@@ -53,7 +65,7 @@ public class CASCOInsurance extends AbstractInsurance{
     @Override
     public String toString() {
         return "CASCOInsurance{" +
-                super.toString()+
+                super.toString() +
                 ", carNumber='" + carNumber + '\'' +
                 "} ";
     }

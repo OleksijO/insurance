@@ -5,8 +5,8 @@ import training.derivative.model.Model;
 /**
  * This class is used for initialization and to start the program
  *
- * @version 1.0 14 NOV 2016
  * @author oleksij.onysymchuk@gmail
+ * @version 1.0 14 NOV 2016
  */
 public class Main {
 

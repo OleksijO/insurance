@@ -1,6 +1,4 @@
-package training.derivative.model.entity.derivative;
-
-import training.derivative.model.entity.insurance.Insurance;
+package training.derivative.model.entity.insurance;
 
 import java.util.Comparator;
 
@@ -12,8 +10,14 @@ import java.util.Comparator;
  */
 public enum InsuranceSortMethod {
 
+    /**
+     * Sort method by insurance risk degree in increasing order
+     */
     BY_RISK_DEGREE((o1, o2) -> Double.compare(o1.getRiskDegree(), o2.getRiskDegree())),
 
+    /**
+     * Sort method by insurance risk degree in decreasing order
+     */
     BY_RISK_DEGREE_DESC((o1, o2) -> Double.compare(o2.getRiskDegree(), o1.getRiskDegree()));
 
     private Comparator<Insurance> comparator;

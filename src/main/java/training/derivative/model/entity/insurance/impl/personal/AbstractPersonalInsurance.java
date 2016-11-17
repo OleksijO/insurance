@@ -3,14 +3,32 @@ package training.derivative.model.entity.insurance.impl.personal;
 import training.derivative.model.entity.insurance.impl.AbstractInsurance;
 
 /**
- * Created by oleksij.onysymchuk@gmail on 13.11.2016.
+ * This class represents common state and functionality of person insurance entity
+ *
+ * @author oleksij.onysymchuk@gmail
+ * @version 1.0 17 NOV 2016
  */
 public class AbstractPersonalInsurance extends AbstractInsurance {
+    /**
+     * Full name of person to be insured by this insurance
+     */
     protected String insuredPersonFullName;
 
+    /**
+     * Initializes only the super instance
+     */
     public AbstractPersonalInsurance() {
     }
 
+    /**
+     * Initializes the super instance and all fields
+     *
+     * @param id                    Unique serial number of insurance
+     * @param name                  Insurance name
+     * @param sumInsured            The value of sum insured
+     * @param riskDegree            The value of risk degree
+     * @param insuredPersonFullName Full name of person to be insured by this insurance
+     */
     public AbstractPersonalInsurance(int id, String name, long sumInsured, double riskDegree, String insuredPersonFullName) {
         super(id, name, sumInsured, riskDegree);
         this.insuredPersonFullName = insuredPersonFullName;
@@ -46,6 +64,6 @@ public class AbstractPersonalInsurance extends AbstractInsurance {
     @Override
     public String toString() {
         return super.toString() +
-                ", insuredPersonFullName='" + insuredPersonFullName+"'";
+                ", insuredPersonFullName='" + insuredPersonFullName + "'";
     }
 }
