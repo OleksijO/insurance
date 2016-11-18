@@ -1,15 +1,14 @@
 package training.derivative.model.entity.derivative.impl;
 
-import training.derivative.model.entity.insurance.InsuranceFindCondition;
-import training.derivative.model.entity.insurance.InsuranceSortMethod;
-import training.derivative.model.entity.insurance.Insurance;
 import training.derivative.model.entity.derivative.InsuranceDerivative;
+import training.derivative.model.entity.insurance.Insurance;
+import training.derivative.model.entity.insurance.InsuranceSortMethod;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * This class represents implementation of interface {@link InsuranceDerivative}
@@ -62,22 +61,15 @@ public class InsuranceDerivativeImpl implements InsuranceDerivative {
     }
 
     @Override
-    public List<Insurance> findInsurances(InsuranceFindCondition... conditions) {
-        if (conditions == null || conditions.length == 0) {
+    public List<Insurance> findInsurances(Predicate<Insurance> predicate) {
+        if (predicate == null) {
             return insurances;
         }
         if ((insurances == null) || (insurances.isEmpty())) {
             return new ArrayList<>();
         }
 
-        Stream<Insurance> insuranceStream = insurances.stream();
-        for (InsuranceFindCondition condition : conditions) {
-            if (condition != null) {
-                insuranceStream = insuranceStream.filter(condition.getPredicate());
-            }
-        }
-
-        return insuranceStream.collect(Collectors.toList());
+        return insurances.stream().filter(predicate).collect(Collectors.toList());
     }
 
     @Override

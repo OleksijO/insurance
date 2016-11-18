@@ -1,10 +1,10 @@
 package training.derivative.model.entity.derivative;
 
 import training.derivative.model.entity.insurance.Insurance;
-import training.derivative.model.entity.insurance.InsuranceFindCondition;
 import training.derivative.model.entity.insurance.InsuranceSortMethod;
 
 import java.util.List;
+import java.util.function.Predicate;
 
 /**
  * This interface describes Derivative - container for several Insurances.
@@ -46,9 +46,9 @@ public interface InsuranceDerivative {
      * Returns the list of insurances, which satisfy vararg specified condition list.
      * Returns all insurances in case of null or empty parameters. Null conditions are ignored.
      *
-     * @param conditions Vararg list of condition. Conditions works as sequential filters (AND analog).
+     * @param predicate Predicate to filter insurances.
      * @return Filtered insurance list
      */
-    List<Insurance> findInsurances(InsuranceFindCondition... conditions);
+    List<Insurance> findInsurances(Predicate<Insurance> predicate);
 
 }

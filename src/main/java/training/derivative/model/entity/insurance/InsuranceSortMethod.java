@@ -13,7 +13,9 @@ public enum InsuranceSortMethod {
     /**
      * Sort method by insurance risk degree in increasing order
      */
-    BY_RISK_DEGREE((o1, o2) -> Double.compare(o1.getRiskDegree(), o2.getRiskDegree())),
+    BY_RISK_DEGREE(Comparator.comparing(Insurance::getRiskDegree) ),
+            //(o1, o2) -> Double.compare(o1.getRiskDegree(), o2.getRiskDegree())
+
 
     /**
      * Sort method by insurance risk degree in decreasing order
